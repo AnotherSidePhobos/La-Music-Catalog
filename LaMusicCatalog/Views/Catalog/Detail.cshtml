@@ -1,0 +1,33 @@
+﻿@model LaMusicCatalog.Models.MusicItem
+@{
+    ViewData["Title"] = "Detail";
+}
+<div class="container">
+    <h1>Detail</h1>
+    <div class="jumbotron">
+        <div class="mainDetail">
+            <div>
+                <div>
+                    <img class="detailImage" src="@Model.ImageUrl" />
+                </div>
+            </div>
+            <div>
+                <div class="detailText">
+                    <p id="detailTitle">@Model.Title</p>
+                    <p id="detailAuthor">@Model.Author</p>
+                    <p id="detailDate">@Model.Date</p>
+                    <a class="DetBtn btn btn-success" href="@Model.FileUrl" download="">
+                        DownLoad pdf
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div>
+        <a class="BackBtn btn btn-info" asp-controller="Catalog" asp-action="Index">Back</a>
+    </div>
+    <div>
+        <a class="BackBtn btn btn-info" asp-controller="PersonalArea" asp-action="Add" asp-route-Id="@Model.Id">Add To Favorite</a>
+    </div>
+</div>
+

@@ -1,0 +1,39 @@
+﻿@model LaMusicCatalog.Models.ViewModels.LoginViewModel
+<div class="container">
+    <div class="RegSec">
+        <div class="container__inner">
+            <h1 title="Log in form">Log in</h1>
+            <form class="loginForm" method="post" asp-action="Login" asp-controller="Account">
+                <div asp-validation-summary="All"></div>
+                <div class="group">
+                    <label id="emailLb" asp-for="Email">Email</label>
+                    <input id="emailInput" asp-for="Email" />
+                    <span asp-validation-for="Email"></span>
+                </div>
+                <div class="group">
+                    <label id="emailLb" asp-for="Password">Password</label>
+                    <input id="PassInput" asp-for="Password" />
+                    <span asp-validation-for="Password"></span>
+                </div>
+                <div id="RemMe" class="group">
+                    <label asp-for="RememberMe">
+                        Remember me?
+                        <input type="checkbox" asp-for="RememberMe" />
+                    </label>
+                </div>
+                <div id="RemMe">
+                    <input type="submit" value="Sign in" class="btn btn-success" />
+                </div>
+
+            </form>
+            <div id="RemMe" class="aSingUp">
+                <a asp-action="Register">Sign Up</a>
+            </div>
+        </div>
+
+    </div>
+</div>
+@section Scripts{
+    <partial name="_ValidationScriptsPartial" />
+
+}

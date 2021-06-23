@@ -1,0 +1,291 @@
+﻿body {
+}
+.imgPict{
+    max-width: 300px;
+    max-height: 180px;
+}
+.detailImage {
+    max-width: 500px;
+    max-height: 280px;
+}
+.mainDetail {
+    display: flex;
+    justify-content: space-around;
+}
+.logo{
+    font-size: 24px;
+    font-family: cursive;
+    font-weight: 800;
+}
+.detailText {
+    text-align: justify;
+    padding-left: 40px;
+    min-width: 400px;
+}
+#detailTitle{
+    font-family: Tahoma;
+    font-size: large;
+    font-weight: 700;
+    border-bottom: 1px solid black; 
+}
+.btnSelect {
+    margin-bottom: 8px;
+}
+.hidden{
+    opacity: 0;
+}
+.BackBtn {
+    margin-left: 20px;
+    float: right;
+    padding: 6px 50px;
+/*    color: black;
+    border-radius: 5px;
+    background-color: burlywood;*/
+}
+/*.BackBtn:hover{
+    background-color: forestgreen;
+    color: black;
+    text-decoration: none;
+    border-radius: 5px;
+}*/
+
+/*.asideContainer{
+    padding: 40px;
+}*/
+.headerWrapper{
+    min-height: 60px;
+    position: relative;
+    padding: 10px 20px;
+}
+#catalogLink {
+    margin-left: 50px;
+    text-decoration: none;
+}
+#btnResFils{
+    /*margin-left: 25%;*/
+}
+
+#selectMus {
+    min-width: 80%;
+    margin-bottom: 15px;
+}
+#homeLink {
+    font-size: 22px;
+    font-weight: 900;
+    font-family: cursive;
+    text-decoration: none;
+}
+#registerLink {
+    padding-top: 6px;
+    float: right;
+    margin-right: 50px;
+    text-decoration: none;
+}
+#loginLink {
+    padding-top: 6px;
+    float: right;
+    /*margin-right: 50px;*/
+    text-decoration: none;
+}
+header {
+    min-height: 60px;
+    width: 70%;
+    left: 0;
+    right: 0;
+    margin: 0 auto;
+}
+
+.headerLinks1{
+    width: 80%;
+}
+.headerLinks {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    list-style-type: none;
+    margin: 0;
+}
+#registerLink{
+    margin-left: 10px;
+}
+#loginLink{
+    margin-left: 10px;
+}
+#wrapper {
+    display: flex;
+}
+#sidebarLeft {
+    text-align: justify;
+    background-color: #E8F6DC;
+    width: 15%;
+    padding: 0 10px 0 20px;
+    height: 100vh;
+}
+#sidebarRight a {
+    
+    animation: titleColor;
+    animation-duration: .8s;
+    animation-iteration-count: infinite;
+}
+#sidebarRight a:hover {
+    text-decoration: none;
+}
+
+#AdvPython a {
+    animation: titleColor2;
+    animation-duration: .9s;
+    animation-iteration-count: infinite;
+}
+#AdvSport a {
+    animation: titleColor;
+    animation-duration: .3s;
+    animation-iteration-count: infinite;
+}
+#AdvCovid a {
+    animation: titleColor1;
+    animation-duration: .5s;
+    animation-iteration-count: infinite;
+}
+#sidebarRight {
+    background-color: #E8F6DC;
+    float: right;
+    padding: 0 50px;
+    width: 15%;
+}
+footer{
+    z-index: 100;
+    background-color: white;
+}
+#centerBox {
+    background-color: #DCE8F6;
+    width: 70%;
+    padding: 0 10px 0 20px;
+    height: 100vh;
+}
+.AdvertismentPython{
+    margin-top: 20px;
+}
+.mainContainer {
+    width: 85%;
+    background-color: rebeccapurple;
+}
+.AdvertismentSport {
+    padding: 4px 12px;
+    font-size: 24px;
+    background-color: darkseagreen;
+    cursor: pointer;
+}
+
+@keyframes titleColor {
+    from {
+        color: white;
+    }
+
+    20% {
+        color: white;
+    }
+
+    50% {
+        color: blue;
+    }
+
+    to {
+        color: red;
+    }
+}
+@keyframes titleColor1 {
+    from {
+        color: forestgreen;
+    }
+
+    20% {
+        color: white;
+    }
+
+    50% {
+        color: orange;
+    }
+
+    to {
+        color: lightgreen;
+    }
+}
+
+@keyframes titleColor2 {
+    from {
+        color: yellow;
+    }
+
+    20% {
+        color: blue;
+    }
+
+    50% {
+        color: green;
+    }
+
+    to {
+        color: black;
+    }
+}
+.container__inner {
+    padding: 20px 50px;
+    border-radius: 10px;
+    border: 8px solid #0188df;
+    margin-top: 80px;
+}
+.container__inner h1 {
+    text-align: center;
+    position: relative;
+}
+#emailLb{
+    padding-left: 20%;
+}
+#emailInputReg {
+    padding-right: 10%;
+    margin-left: 158px;
+}
+#emailInput {
+    padding-right: 10%;
+    margin-left: 154px;
+}
+#PassInput {
+    padding-right: 10%;
+    margin-left: 125px;
+}
+#PassInputReg {
+    padding-right: 10%;
+    margin-left: 130px;
+}
+#PassInputRegConf {
+    padding-right: 10%;
+    margin-left: 69px;
+}
+#RemMe {
+    text-align: center;
+}
+
+/*RegSection*/
+/*.aSingIn {
+    text-align: center;
+    margin-top: 90px;
+}
+
+.aSingUp {
+    text-align: center;
+    margin-top: 100px;
+}
+
+.RegSec {
+    padding-top: 70px;
+}
+
+.container__inner {
+    position: absolute;
+    width: 800px;
+    height: auto;
+    left: 0;
+    right: 0;
+    margin: auto;
+}*/
+/*RegSection*/

@@ -1,0 +1,81 @@
+﻿@model LaMusicCatalog.Models.ListMusicItem
+@{
+    ViewData["Title"] = "Index";
+}
+
+
+
+<div id="wrapper">
+    <div id="sidebarLeft">
+        <form method="get">
+            <div>
+                <div>
+                    <span id="SelectSpan">
+                        <label for="Select">Select type of music recording:</label>
+                        <select id="selectMus" name="Select">
+                            <option value="Notes">Notes</option>
+                            <option value="Chords">Chords</option>
+                        </select>
+                    </span>
+                    <br />
+                    <div class="sideBarBtns">
+                        <input id="btnSelects" type="submit" value="Select" class="btn btn-success btnSelect" />
+                        <a id="btnResFils" class="btn btn-danger btnSelect" asp-controller="Catalog" asp-action="Index" asp-route-id="null">reset filters </a>
+                    </div>
+
+                </div>
+
+
+            </div>
+        </form>
+    </div>
+    <div id="centerBox">
+        <table class="table  table-condensed">
+            <thead>
+                <tr>
+                    <th>Image</th>
+                    <th>Title</th>
+                    <th>Author</th>
+                    <th>Date</th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var item in Model.MusicItems)
+                {
+                    <tr>
+                        <td>
+                            <a asp-controller="Catalog" asp-action="Detail" asp-route-id="@item.Id">
+                                <img class="imgPict" src="@item.ImageUrl" />
+                            </a>
+                        </td>
+
+                        <td>@item.Title</td>
+                        <td>@item.Author</td>
+                        <td>@item.Date</td>
+
+                    </tr>
+                }
+            </tbody>
+        </table>
+    </div>
+    <div id="sidebarRight">
+        @if (!User.Identity.IsAuthenticated)
+        {
+            <a id="AdvSport" href="https://www.fonbet.ru/" style="font-size: 26px">Ставки на спорт!</a>
+            <br />
+            <br />
+            <br />
+            <a id="AdvPython" href="https://gb.ru/geek_university/python?utm_source=google&utm_medium=cpc&utm_campaign=google_s_rus_programmist_python_main_lp_geek_university_python_prog&utm_term=%2B%D0%BA%D1%83%D1%80%D1%81%D1%8B%20%2Bpython&utm_content=cid:1918092217|gid:70312378053|aid:350135749142|pos:|st:g|src:|dvc:c|reg:1011981&gclid=Cj0KCQjwlMaGBhD3ARIsAPvWd6jSsGfBjJzkQ7HbZDw3e3CTV9fgmlhimcQVFFYauzJqBQaMlwDJFNQaArHlEALw_wcB" style="font-size: 26px">Покори Python, нефига не делая!</a>
+            <br />
+            <br />
+            <br />
+            <a id="AdvCovid" href="https://www.xn----7sbgbppn1bjii.xn--p1ai/medknizhki/spravka-o-vaktsinatsii-privivki" style="font-size: 26px">Купить справку о вакцинации</a>
+        }
+    </div>
+</div>
+
+
+
+
+
+
