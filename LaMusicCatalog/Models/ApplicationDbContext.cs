@@ -15,5 +15,6 @@ namespace LaMusicCatalog.Models
         public DbSet<ChordsItem> ChordsItems { get; set; }
         public DbSet<NoteItem> NoteItems { get; set; }
         public DbSet<UsersItems> UsersItems { get; set; }
+        public DbSet<FeedBack> FeedBacks { get; set; }
     }
 }

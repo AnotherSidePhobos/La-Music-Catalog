@@ -5,29 +5,35 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>@ViewData["Title"] - SheetMusicLibrary</title>
     <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/qtip2/3.0.3/jquery.qtip.min.css" />
     <link rel="stylesheet" href="~/css/site.css" />
     <link rel="stylesheet" href="~/css/Style.css" />
 </head>
 <body>
-    <header>
-        <div class="headerWrapper">
-            <partial name="_LoginPartial" />
-        </div>
+    <div class="wrapper">
+        <header>
+            <div class="headerWrapper">
+                <partial name="_LoginPartial" />
+            </div>
 
-    </header>
-    <div mainContainer>
-        <main role="main">
-            @RenderBody()
-        </main>
+        </header>
+        <div mainContainer>
+            <main role="main">
+                @RenderBody()
+            </main>
+        </div>
+        <partial name="_AddFeedBack" />
+        <footer id="ftr" class="border-top footer text-muted">
+            <div class="container">
+                &copy; @DateTime.Now.Year - La Music Catalog
+                <a onclick="openFeedBackWind();" class="FeedBackLink">Give FeedBack</a>
+            </div>
+        </footer>
     </div>
 
-    <footer class="border-top footer text-muted">
-        <div class="container">
-            &copy; 2021 - SheetMusicLibrary - <a asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>
-        </div>
-    </footer>
     <script src="~/lib/jquery/dist/jquery.min.js"></script>
     <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    <script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/qtip2/3.0.3/jquery.qtip.min.js"></script>
     <script src="~/js/site.js" asp-append-version="true"></script>
     <script src="~/js/Script.js"></script>
     @await RenderSectionAsync("Scripts", required: false)

@@ -434,3 +434,5 @@ C:\Users\amelent\source\repos\LaMusicCatalog\LaMusicCatalog\obj\Debug\net5.0\Raz
 C:\Users\amelent\source\repos\LaMusicCatalog\LaMusicCatalog\obj\Debug\net5.0\Razor\Views\Catalog\Index.cshtml.g.cs
 C:\Users\amelent\source\repos\LaMusicCatalog\LaMusicCatalog\obj\Debug\net5.0\Razor\Views\Catalog\Detail.cshtml.g.cs
 C:\Users\amelent\source\repos\LaMusicCatalog\LaMusicCatalog\obj\Debug\net5.0\Razor\Views\PersonalArea\Index.cshtml.g.cs
+C:\Users\amelent\source\repos\LaMusicCatalog\LaMusicCatalog\obj\Debug\net5.0\Razor\Views\Shared\_AddFeedBack.cshtml.g.cs
+C:\Users\amelent\source\repos\LaMusicCatalog\LaMusicCatalog\obj\Debug\net5.0\Razor\Views\Home\Index2.cshtml.g.cs

@@ -1,4 +1,5 @@
 using LaMusicCatalog.Models;
+using LaMusicCatalog.Service;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.HttpsPolicy;
@@ -26,13 +27,13 @@ namespace LaMusicCatalog
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddControllersWithViews();
-
+            services.AddTransient<IServiceFB, ServiceFB>();
             services.AddTransient<IMusicItemService, MusicItemService>();
             
             services.AddDbContext<ApplicationDbContext>(options 
                 => options.UseSqlServer(Configuration.GetConnectionString("LibraryConnection")));
             services.AddIdentity<ApplicationUser, IdentityRole>().AddEntityFrameworkStores<ApplicationDbContext>();
-
+            services.AddHttpContextAccessor();
 
 
         }
