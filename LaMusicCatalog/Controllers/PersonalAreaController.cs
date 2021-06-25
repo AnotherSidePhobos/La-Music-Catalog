@@ -2,6 +2,7 @@
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
+using ReflectionIT.Mvc.Paging;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -20,7 +21,7 @@ namespace LaMusicCatalog.Controllers
         }
 
         [Authorize]
-        public IActionResult Index()
+        public IActionResult Index(int pageIndex = 1)
         {
             var userName = User.Identity.Name;
 
@@ -40,7 +41,10 @@ namespace LaMusicCatalog.Controllers
                 MusicItem obj = _db.MusicItems.Where(i => i.Id == item).FirstOrDefault();
                 ListFavMusics.Add(obj);
             }
-            return View(ListFavMusics);
+
+            var model = PagingList.Create(ListFavMusics, 4, pageIndex);
+
+            return View(model);
         }
 
         [Authorize]

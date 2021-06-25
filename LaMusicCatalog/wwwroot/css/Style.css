@@ -287,3 +287,25 @@ footer{
     color: darkblue;
 }
 /*Footer*/
+ul.pagination{
+    padding-left: 30%;
+}
+.pagination li{
+
+}
+.paginationNav a {
+    font-family: cursive;
+    font-size: 24px;
+    color: red;
+
+}
+.pagination li{
+    margin-left: 45px;
+}
+
+#filter-input{
+    display: flex;
+    justify-content: space-around;
+    width: 100%;
+    
+}

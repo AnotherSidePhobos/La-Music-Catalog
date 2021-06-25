@@ -27,3 +27,27 @@ function onSubmitForm() {
     onCloseModal();
     alert('spasibo za otziv, brat');
 }
+
+
+
+let filter = function () {
+    let input = document.getElementById('filter-input');
+
+    input.addEventListener('keyup', function () {
+        let filter = input.value.toLowerCase(),
+            filterElementsTr = document.querySelectorAll('.filter_items');
+        console.log(filterElementsTr);
+        filterElementsTr.forEach(item => {
+            
+            if (item.innerHTML.toLocaleLowerCase().indexOf(filter) > -1) {
+            item.style.display = '';
+            }
+            else {
+                item.style.display = 'none';
+            }
+        });
+    });
+
+}
+
+filter();

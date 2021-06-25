@@ -1,5 +1,6 @@
 ﻿using LaMusicCatalog.Models;
 using Microsoft.AspNetCore.Mvc;
+using ReflectionIT.Mvc.Paging;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -14,40 +15,11 @@ namespace LaMusicCatalog.Controllers
         {
             _musicItemService = musicItemService;
         }
-        public IActionResult Index(string Select)
+        public IActionResult Index(string Select, int pageIndex = 1)
         {
-            IEnumerable<MusicItem> musicItems;
-            if (Select == null)
-            {
-                musicItems = _musicItemService.GetAll();
-            }
-            else
-            {
-                if (Select == "Notes")
-                {
-                    musicItems = _musicItemService.GetOnlyNotes();
-                }
-                else //if (Sheets == "Chords")
-                {
-                    musicItems = _musicItemService.GetOnlyChords();
-                }
-            }
-            var musicItemsResult = musicItems
-                .Select(result => new MusicItem
-                {
-                    Id = result.Id,
-                    Author = result.Author,
-                    Date = result.Date,
-                    FileUrl = result.FileUrl,
-                    ImageUrl = result.ImageUrl,
-                    Title = result.Title
-                });
-
-            var model = new ListMusicItem()
-            {
-                MusicItems = musicItemsResult
-            };
-            return View(model);
+            var query = _musicItemService.GetAll();
+            var mod = PagingList.Create(query, 4, pageIndex);
+            return View(mod);
         }
 
 

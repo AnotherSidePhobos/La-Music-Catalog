@@ -8,6 +8,7 @@ using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
+using ReflectionIT.Mvc.Paging;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -34,7 +35,7 @@ namespace LaMusicCatalog
                 => options.UseSqlServer(Configuration.GetConnectionString("LibraryConnection")));
             services.AddIdentity<ApplicationUser, IdentityRole>().AddEntityFrameworkStores<ApplicationDbContext>();
             services.AddHttpContextAccessor();
-
+            services.AddPaging();
 
         }
 

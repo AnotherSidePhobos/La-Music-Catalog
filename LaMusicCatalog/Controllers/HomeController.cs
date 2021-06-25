@@ -22,11 +22,5 @@ namespace LaMusicCatalog.Controllers
         {
             return View();
         }
-
-        public IActionResult Index2()
-        {
-            var musicItems = _musicItemService.GetAll();
-            return View(musicItems);
-        }
     }
 }

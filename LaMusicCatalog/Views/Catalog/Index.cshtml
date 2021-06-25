@@ -1,34 +1,22 @@
-﻿@model LaMusicCatalog.Models.ListMusicItem
+﻿@model ReflectionIT.Mvc.Paging.PagingList<LaMusicCatalog.Models.MusicItem>
+@using ReflectionIT.Mvc.Paging
+@addTagHelper*,ReflectionIT.Mvc.Paging
 @{
     ViewData["Title"] = "Index";
 }
 
 
-
+<div class="container">
+    <nav class="paginationNav">
+        @await this.Component.InvokeAsync("Pager", new { pagingList = this.Model })
+    </nav>
+</div>
 <div id="wrapper">
     <div id="sidebarLeft">
-        <form method="get">
-            <div>
-                <div>
-                    <span id="SelectSpan">
-                        <label for="Select">Select type of music recording:</label>
-                        <select id="selectMus" name="Select">
-                            <option value="Notes">Notes</option>
-                            <option value="Chords">Chords</option>
-                        </select>
-                    </span>
-                    <br />
-                    <div class="sideBarBtns">
-                        <input id="btnSelects" type="submit" value="Select" class="btn btn-success btnSelect" />
-                        <a id="btnResFils" class="btn btn-danger btnSelect" asp-controller="Catalog" asp-action="Index" asp-route-id="null">reset filters </a>
-                    </div>
-
-                </div>
-
-
-            </div>
-        </form>
+        <label for="filter-input">Search: </label>
+        <input type="text" id="filter-input" placeholder="Start writing the song title">
     </div>
+
     <div id="centerBox">
         <table class="table  table-condensed">
             <thead>
@@ -40,9 +28,9 @@
                 </tr>
             </thead>
             <tbody>
-                @foreach (var item in Model.MusicItems)
+                @foreach (var item in Model)
                 {
-                    <tr>
+                    <tr class="filter_items">
                         <td>
                             <a asp-controller="Catalog" asp-action="Detail" asp-route-id="@item.Id">
                                 <img class="imgPict" src="@item.ImageUrl" />
@@ -73,9 +61,3 @@
         }
     </div>
 </div>
-
-
-
-
-
-
